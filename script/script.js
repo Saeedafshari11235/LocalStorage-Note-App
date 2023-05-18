@@ -7,7 +7,17 @@ let blur = document.querySelector("div.blur")
 let modal = document.querySelector(".modal")
 let yes = document.querySelector(".yes")
 let no = document.querySelector(".no")
-
+let noteArray = []
+window.onload = function(){
+    let l = JSON.parse(localStorage.getItem("note"))
+    l.forEach((noted)=>{
+        let localNote = document.createElement("div")
+        localNote.innerHTML = noted.value
+        localNote.classList.add(noted.color)
+        console.log(localNote)
+        container.append(localNote)
+    })
+}
 input.addEventListener("keydown",(event)=>{
     if(event.key === "Enter"){
         event.preventDefault()
@@ -42,7 +52,6 @@ function modalremove(){
 
 spans.forEach((span)=>{
     span.addEventListener("click",()=>{
-        console.log(span.classList.value)
         input.classList = []
         input.classList.add(span.classList.value)
     })
@@ -50,12 +59,15 @@ spans.forEach((span)=>{
 function adder(){
     if(input.value ==="")return
     let note = document.createElement("div")
+    let noteObj = {value:input.value , color:input.classList.value}
+    noteArray.push(noteObj)
+    console.log(noteArray)
+    localStorage.setItem("note",JSON.stringify(noteArray))
     note.innerHTML = input.value
     note.classList.add(input.classList.value)
     container.append(note)
     note.addEventListener("click",()=>{
         note.remove()
     })
-    //////////////////////////////////
     input.value=""
 }
