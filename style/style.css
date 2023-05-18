@@ -1,0 +1,252 @@
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    width: 30rem;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #006278;
+    transition: 0.3s;
+}
+h1{
+    margin-top: 8rem;
+}
+.colors{
+    width: 32rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0 0.5rem 0;
+}
+span{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+.maroon{
+    background-color: #9E1C44;
+    color: #fff;
+}
+.maroon:focus{
+    border: 2px solid #9E1C44;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #9E1C44;
+}
+.purple{
+    background-color: #76338D;
+    color: #fff;
+}
+.purple:focus{
+    border: 2px solid #76338D;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #76338D;
+}
+.space{
+    background-color: #422F8A;
+    color: #fff;
+}
+.space:focus{
+    border: 2px solid #422F8A;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #422F8A;
+}
+.blue{
+    background-color: #3B59A2;
+    color: #fff;
+}
+.blue:focus{
+    border: 2px solid #3B59A2;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #3B59A2;
+}
+.azure{
+    background-color: #138DC4;
+}
+.azure:focus{
+    border: 2px solid #138DC4;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #138DC4;
+}
+.green{
+    background-color: #5FA93A;
+}
+.green:focus{
+    border: 2px solid #5FA93A;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #5FA93A;
+}
+.lemon{
+    background-color: #C4D233;
+}
+.lemon:focus{
+    border: 2px solid #C4D233;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #C4D233;
+}
+.yellow{
+    background-color: #E7DF37;
+}
+.yellow:focus{
+    border: 2px solid #E7DF37;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #E7DF37;
+}
+.orange{
+    background-color: #ECB317;
+}
+.orange:focus{
+    border: 2px solid #ECB317;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #ECB317;
+}
+.tangerine{
+    background-color: #EC931C;
+}
+.tangerine:focus{
+    border: 2px solid #EC931C;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #EC931C;
+}
+.tiger{
+    background-color: #E55022;
+    color: #fff;
+}
+.tiger:focus{
+    border: 2px solid #E55022;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #E55022;
+}
+.red{
+    background-color: #E32F22;
+    color: #fff;
+}
+.red:focus{
+    border: 2px solid #E32F22;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #E32F22;
+}
+.white{
+    background-color: #fff;
+    color: #000;
+}
+.white:focus{
+    border: 2px solid #ececec;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #ececec;
+}
+.grey{
+    background-color: #818181;
+    color: #fff;
+}
+.grey:focus{
+    border: 2px solid #818181;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #818181;
+}
+.black{
+    background-color: #000;
+    color: #fff;
+}
+.black:focus{
+    border: 2px solid #2b2b2b;
+    outline: none;
+    box-shadow: 0 0.2rem 0.8rem 0.2rem #2b2b2b;
+}
+hr{
+    width: 61rem;
+}
+div.container{
+    width: 61rem;
+    margin-bottom: 2rem;
+    height: fit-content;
+}
+div.container div{
+    border-radius: 0.5rem;
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.5rem;
+    max-width: 25rem;
+    margin: 0.5rem;
+    border: 1px solid #a3a3a3;
+}
+i{
+    font-size: 2rem;
+    border: 2px solid;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+i.plus{
+    color: #138DC4;
+    border-color: #138DC4;
+}
+i.eraser{
+    color: red;
+    border-color: red;
+}
+div.blur{
+    position: absolute;
+    z-index: -1;
+    width: 99.99vw;
+    height: 99.9vh;
+    margin: 0;
+    background-color: #3a3a3a;
+    filter: opacity(0.8);
+    visibility: hidden;
+    transition: 1s;
+}
+.modal{
+    position: absolute;
+    z-index: 90;
+    background-color: #0077ff;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    height: 7rem;
+    top: -30rem;
+    transition: 1s;
+}
+.text{
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    background-color: rgb(0, 76, 255);
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+.modal button{
+    font-size: 1.3rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.2rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.yes{
+    background-color: green;
+}
+.no{
+    background-color: red;
+}
