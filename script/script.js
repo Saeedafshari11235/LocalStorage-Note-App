@@ -10,13 +10,23 @@ let no = document.querySelector(".no")
 let noteArray = []
 window.onload = function(){
     let l = JSON.parse(localStorage.getItem("note"))
-    l.forEach((noted)=>{
-        let localNote = document.createElement("div")
-        localNote.innerHTML = noted.value
-        localNote.classList.add(noted.color)
-        console.log(localNote)
-        container.append(localNote)
-    })
+    if(l){
+        noteArray = l
+        console.log(noteArray)
+        l.forEach((noted)=>{
+            let localNote = document.createElement("div")
+            localNote.innerHTML = noted.value
+            localNote.classList.add(noted.color)
+            container.append(localNote)
+            localNote.addEventListener("click",()=>{
+                localNote.remove()
+                let localNoteObj = {value:localNote.innerHTML,color:localNote.className}
+                l.splice(l.indexOf(localNoteObj),1)
+                console.log(l)
+                localStorage.setItem("note",JSON.stringify(l))
+            })
+        })
+    }
 }
 input.addEventListener("keydown",(event)=>{
     if(event.key === "Enter"){
@@ -37,6 +47,7 @@ yes.addEventListener("click",()=>{
     while(container.firstChild){
         container.removeChild(container.firstChild)
     }
+    localStorage.clear()
     modalremove()
 })
 
@@ -60,6 +71,7 @@ function adder(){
     if(input.value ==="")return
     let note = document.createElement("div")
     let noteObj = {value:input.value , color:input.classList.value}
+    console.log(noteObj)
     noteArray.push(noteObj)
     console.log(noteArray)
     localStorage.setItem("note",JSON.stringify(noteArray))
@@ -68,6 +80,9 @@ function adder(){
     container.append(note)
     note.addEventListener("click",()=>{
         note.remove()
+        let noteRemoveObj = {value:note.innerHTML,color:note.className}
+        noteArray.splice(noteArray.indexOf(noteRemoveObj),1)
+        localStorage.setItem("note",JSON.stringify(noteArray))
     })
     input.value=""
 }
