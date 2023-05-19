@@ -48,6 +48,7 @@ yes.addEventListener("click",()=>{
         container.removeChild(container.firstChild)
     }
     localStorage.clear()
+    noteArray = []
     modalremove()
 })
 
